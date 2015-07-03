@@ -464,3 +464,210 @@ C.自定义列表
 <dt> 定义定义项目。 
 <dd> 定义定义的描述。 
 
+25.块元素和内联元素
+
+块级元素在浏览器显示时，通常会以新行来开始（和结束）。
+例子：<h1>, <p>, <ul>, <table>
+
+内联元素在显示时通常不会以新行开始。
+例子：<b>, <td>, <a>, <img>
+
+26.div
+HTML <div> 元素是块级元素，它是可用于组合其他 HTML 元素的容器。
+
+<div> 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。使用 <table> 元素进行文档布局不是表格的正确用法。<table> 元素的作用是显示表格化的数据。
+
+27.span
+HTML <span> 元素是内联元素，可用作文本的容器。
+
+当与 CSS 一同使用时，<span> 元素可用于为部分文本设置样式属性。
+
+28.网站布局
+使用css文件更加利于管理网站
+
+29.HTML表单和输入
+A.表单
+<form>
+...
+  input 元素
+...
+</form>
+
+B.输入
+多数情况下被用到的表单标签是输入标签（<input>）。输入类型是由类型属性（type）定义的
+
+·文本域
+<form>
+First name: 
+<input type="text" name="firstname" />
+<br />
+Last name: 
+<input type="text" name="lastname" />
+</form>
+
+·单选按钮
+<form>
+<input type="radio" name="sex" value="male" /> Male
+<br />
+<input type="radio" name="sex" value="female" /> Female
+</form>
+
+·复选框
+<form>
+<input type="checkbox" name="bike" />
+I have a bike
+<br />
+<input type="checkbox" name="car" />
+I have a car
+</form>
+
+·下拉列表
+没有预选内容
+<form>
+<select name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+</form>
+
+有预选内容
+<form>
+<select name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat" selected="selected">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+</form>
+
+·文本域
+<textarea rows="10" cols="30">
+The cat was playing in the garden.
+
+用于获取文本块输入
+
+·按钮
+<form>
+<input type="button" value="Hello world!">
+</form>
+
+·在选项周围设计一个框
+<form>
+  <fieldset>
+    <legend>健康信息</legend>
+    身高：<input type="text" />
+    体重：<input type="text" />
+  </fieldset>
+</form>
+
+C.表单的动作属性和确认按钮
+<form name="input" action="html_form_action.asp" method="get">
+Username: 
+<input type="text" name="user" />
+<input type="submit" value="Submit" />
+</form>
+
+30.HTML框架
+
+A.垂直框架
+<frameset cols="25%,50%,25%">
+
+  <frame src="/example/html/frame_a.html">
+  <frame src="/example/html/frame_b.html">
+  <frame src="/example/html/frame_c.html">
+
+</frameset>
+
+B.水平框架
+
+<frameset rows="25%,50%,25%">
+
+  <frame src="/example/html/frame_a.html">
+  <frame src="/example/html/frame_b.html">
+  <frame src="/example/html/frame_c.html">
+
+</frameset>
+
+C.调整框架
+假如一个框架有可见边框，用户可以拖动边框来改变它的大小。为了避免这种情况发生，可以在 <frame> 标签中加入：noresize="noresize"。
+
+为不支持框架的浏览器添加 <noframes> 标签。
+
+D.混合框架
+<frameset rows="50%,50%">
+
+<frame src="/example/html/frame_a.html">
+
+<frameset cols="25%,75%">
+<frame src="/example/html/frame_b.html">
+<frame src="/example/html/frame_c.html">
+</frameset>
+
+</frameset>
+
+F.导航框架
+导航框架包含一个将第二个框架作为目标的链接列表。名为 "contents.htm" 的文件包含三个链接。
+<frameset cols="120,*">
+
+  <frame src="/example/html/html_contents.html">
+  <frame src="/example/html/frame_a.html" name="showframe">
+
+</frameset>
+
+31.HTML Iframe
+iframe 用于在网页内显示网页
+
+·在网页内显示网页
+<iframe src="URL"></iframe>
+
+·设置高度和宽带
+<iframe src="demo_iframe.htm" width="200" height="200"></iframe>
+
+·删除边框
+frameborder 属性规定是否显示 iframe 周围的边框。
+设置属性值为 "0" 就可以移除边框：
+
+实例
+<iframe src="demo_iframe.htm" frameborder="0"></iframe>
+
+·使用 iframe 作为链接的目标
+iframe 可用作链接的目标（target）。
+链接的 target 属性必须引用 iframe 的 name 属性：
+
+实例
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="http://www.w3school.com.cn" target="iframe_a">W3School.com.cn</a></p>
+
+32.HTML背景（建议使用css实现）
+
+·背景颜色（Bgcolor）
+
+背景颜色属性将背景设置为某种颜色。属性值可以是十六进制数、RGB 值或颜色名。
+<body bgcolor="#000000">
+<body bgcolor="rgb(0,0,0)">
+<body bgcolor="black">
+
+·背景（Background）
+
+背景属性将背景设置为图像。属性值为图像的URL。如果图像尺寸小于浏览器窗口，那么图像将在整个浏览器窗口进行复制。
+<body background="clouds.gif">
+<body background="http://www.w3school.com.cn/clouds.gif">
+URL可以是相对地址，如第一行代码。也可以使绝对地址，如第二行代码。
+
+#注意
+<body> 标签中的背景颜色（bgcolor）、背景（background）和文本（text）属性在最新的 HTML 标准（HTML4 和 XHTML）中已被废弃。W3C 在他们的推荐标准中已删除这些属性。
+
+应该使用层叠样式表（CSS）来定义 HTML 元素的布局和显示属性。
+
+33.HTML颜色
+
+·颜色值
+颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）。
+
+·颜色名
+大多数的浏览器都支持颜色名集合。
+
+提示：仅仅有 16 种颜色名被 W3C 的 HTML4.0 标准所支持。它们是：aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, yellow。
+如果使用其它颜色的话，就应该使用十六进制的颜色值。
